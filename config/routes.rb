@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   
-  resources :quotes
   get 'static_pages/home'
 
   get 'static_pages/help'
