@@ -11,7 +11,10 @@
 </thead>
 <tbody>
 <tr>
-
+  
+    <% @cart.line_items.each do |item| %>
+    <tr><td><%= item.quantity %> &times; <%= item.product.title %></td><td></td></tr>
+  <% end %>
 
 <tr>
 <td>
@@ -20,5 +23,9 @@
 </td>
 </tr>
 </tbody>
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<br>
+<%= button_to 'Keep Shopping', store_index_url , class:"btn btn-primary" %>
 </table>
 </div>
